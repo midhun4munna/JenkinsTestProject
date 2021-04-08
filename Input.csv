@@ -17,4 +17,4 @@ AppID,AppName,Environment,ReleaseVersion,Status
 155,CDSINFO,SIT,2.9.9,QA Failed
 777,Pega,UAT,1.0.1,QA Failed
 777,Pega,SIT,1.0.1,QA Signed Off
-777,Pega,DEV,1.0.1,UT Passed
+777,Pega,DEV,1.0.1,UT Failed
