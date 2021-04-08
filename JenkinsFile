@@ -4,26 +4,30 @@ pipeline {
   agent any 
 
     stages {
-		stage('Checkout') {
+	
+		stage('CheckoutInput') {
 			steps {
-			 GitClone(
+			 GitCheckOut(
 				branch: "main",
 				url: "https://github.com/midhun4munna/JenkinsTestProject.git"
 				)
 			}
 		}
+		
 		stage('Analyze&Report') {
 			steps {
-			CSVReadValues()
+			GenerateReport()
 			}
 		}
+		
+		stage('EmailNotification') {
+			steps {
+			 EmailSender()
+			}
+		}	
+		
 	}
 	
-	post {
-  always {
-    emailnotification()
-  }
-}
 }
   
 
